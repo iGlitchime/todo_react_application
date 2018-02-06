@@ -1,0 +1,91 @@
+$app: ".App";
+//#{$app}
+.App {
+
+  text-align: center;
+  background: darkcyan;
+  padding: 30px 10px;
+
+  &__child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 24pt;
+    margin: 50px auto;
+    width: 500px;
+  }
+  &__input {
+    //border: 1px solid lightcyan;
+    background: white;
+    height: 50px;
+    //width: 100%;
+    border: none;
+
+    &:-moz-placeholder, &:-ms-input-placeholder, &::-moz-placeholder, &::-webkit-input-placeholder {
+      color: #006666;
+      font-size: 18pt;
+    }
+  }
+  &__input-field {
+    padding: 10px;
+    background: lightcyan;
+    outline: none;
+    font-size: 18pt;
+    border: 1px solid lightseagreen;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+
+    &:active {
+      //border-width: 2px;
+      border-style: groove;
+    }
+
+  }
+
+  &__input-button {
+    border: 1px solid #ECCCA2;
+    background: sandybrown;
+    font-size: 18pt;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  &__tasksList {
+    width: 500px;
+    margin: 50px auto;
+  }
+  &__tasksItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid lightcyan;
+    border-bottom: none;
+    &:last-child {
+      border-bottom: 1px solid lightcyan;
+    }
+  }
+  &__tasksItemTxt {
+    color: lightcyan;
+    font-size: 18pt;
+    padding: 10px;
+  }
+  &__tasksItemBtn {
+    font-size: 18pt;
+    border: 1px solid #004444;
+    color: #004444;
+    background: #006666;
+    padding: 5px 10px;
+    outline: none;
+  }
+}
