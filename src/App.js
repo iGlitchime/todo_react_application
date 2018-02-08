@@ -4,8 +4,14 @@ import { InputComponent } from './components/InputComponent';
 import { TasksList } from './components/TasksList';
 
 
-class App extends Component {
+let TasksArray = [{index: 0, value: 'first'}, {index: 1, value: 'second'}, {index: 2, value: 'third'}];
 
+
+
+
+
+
+class App extends Component {
 
     render() {
         return (
@@ -13,7 +19,7 @@ class App extends Component {
                 <h1 className="App__header">{content.title}</h1>
 
                 <InputComponent buttonName={content.addButton}></InputComponent>
-                <TasksList buttonName={content.removeButton} taskItem={content.taskItem} >
+                <TasksList {...content}>
                 </TasksList>
             </div>
         );
@@ -26,7 +32,6 @@ const content = {
     removeButton: 'Remove',
     taskItem: 'Item N'
 };
-
 
 
 export default App;

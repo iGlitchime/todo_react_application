@@ -6,10 +6,10 @@ import { TasksItem } from './TasksItem';
 
 export class TasksList extends React.Component{
     render(){
-        console.log(this.props);
+        //console.log(this.props);
         return (
             <div className="App__tasksList">
-                <TasksItem content={this.props}></TasksItem>
+                <TasksItem {...this.props}></TasksItem>
             </div>
         );
     }
