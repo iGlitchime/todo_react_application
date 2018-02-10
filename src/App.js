@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
 import './App.css';
-import { InputComponent } from './components/InputComponent';
-import { TasksList } from './components/TasksList';
 
-
-let TasksArray = [{index: 0, value: 'first'}, {index: 1, value: 'second'}, {index: 2, value: 'third'}];
-
-
-
-
-
+import InputContainer from './container/InputContainer';
+import TasksItem from './container/TasksItem';
 
 class App extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            data: null
+        }
+    }
+
+    testConsole = (value) => {
+        this.setState({ data: value });
+        console.log(value);
+    };
+
+    drawTaskItems = () => {
+
+    };
 
     render() {
         return (
-            <div className="App">
-                <h1 className="App__header">{content.title}</h1>
+            <div>
+                <h1>ToDoList</h1>
+                <InputContainer nameButton={'get on'} test={this.testConsole} />
 
-                <InputComponent buttonName={content.addButton}></InputComponent>
-                <TasksList {...content}>
-                </TasksList>
+                <TasksItem test={this.state.data} />
+
             </div>
         );
     }
 }
-
-const content = {
-    title: 'To Do List',
-    addButton: 'Add',
-    removeButton: 'Remove',
-    taskItem: 'Item N'
-};
-
 
 export default App;

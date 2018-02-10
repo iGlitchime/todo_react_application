@@ -5,11 +5,13 @@ import React from 'react';
 import { TasksItem } from './TasksItem';
 
 export class TasksList extends React.Component{
+
+
     render(){
         //console.log(this.props);
         return (
             <div className="App__tasksList">
-                <TasksItem {...this.props}></TasksItem>
+                <TasksItem  />
             </div>
         );
     }
