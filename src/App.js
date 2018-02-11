@@ -21,6 +21,7 @@ class App extends Component {
 
     handleDelete(itemToBeDeleted) {
         console.log(itemToBeDeleted);
+        let newItemsArray = this.state.items.filter()
     }
 
     render() {
@@ -29,8 +30,8 @@ class App extends Component {
                 <header className="App__header">ToDoList | karane ke lie soochee</header>
                 <InputContainer nameButton={'get on'} getInputData={this.getInputData}/>
                 <TasksList
-                    itemsData = {this.state.data}
-                    handleDelete={this.handleDelete}
+                    itemsData={this.state.data}
+                    itemsDelete={this.handleDelete}
                     />
             </div>
         );
