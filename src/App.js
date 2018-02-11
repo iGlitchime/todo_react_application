@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 import InputContainer from './container/InputContainer';
-import TasksItem from './container/TasksItem';
+import TasksList from './container/TasksList';
+
 
 class App extends Component {
     constructor() {
@@ -13,23 +14,19 @@ class App extends Component {
         }
     }
 
-    testConsole = (value) => {
-        this.setState({ data: value });
+    getInputData = (value) => {
+        this.setState({data: value});
         console.log(value);
     };
 
-    drawTaskItems = () => {
 
-    };
 
     render() {
         return (
-            <div>
-                <h1>ToDoList</h1>
-                <InputContainer nameButton={'get on'} test={this.testConsole} />
-
-                <TasksItem test={this.state.data} />
-
+            <div className="App">
+                <header className="App__header">ToDoList | karane ke lie soochee</header>
+                <InputContainer nameButton={'get on'} getInputData={this.getInputData}/>
+                <TasksList itemsData = {this.state.data}/>
             </div>
         );
     }

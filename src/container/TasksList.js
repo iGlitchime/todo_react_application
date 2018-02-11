@@ -2,16 +2,15 @@
  * Created by IATS on 07.02.2018.
  */
 import React from 'react';
-import { TasksItem } from './TasksItem';
+import TasksItem from './TasksItem';
 
-export class TasksList extends React.Component{
+export default class TasksList extends React.Component {
 
-
-    render(){
-        //console.log(this.props);
+    render() {
+        console.log(this.props);
         return (
             <div className="App__tasksList">
-                <TasksItem  />
+                <TasksItem getInputData={this.props.itemsData}/>
             </div>
         );
     }

@@ -1,25 +1,31 @@
 $app: ".App";
 //#{$app}
 .App {
-
   text-align: center;
   background: darkcyan;
-  padding: 30px 10px;
+  padding: 100px 10px;
 
+  &__header{
+    font-size: 24pt;
+      margin: 50px auto;
+    font-family: Courier,sans-serif;
+    font-weight: 800;
+  }
   &__child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    //display: flex;
+    //justify-content: space-between;
+    //align-items: center;
 
     font-size: 24pt;
     margin: 50px auto;
     width: 500px;
   }
   &__input {
-    //border: 1px solid lightcyan;
-    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     height: 50px;
-    //width: 100%;
     border: none;
 
     &:-moz-placeholder, &:-ms-input-placeholder, &::-moz-placeholder, &::-webkit-input-placeholder {
@@ -38,7 +44,7 @@ $app: ".App";
     }
   }
 
-  button {
+  &__button {
 
     &:active {
       //border-width: 2px;
@@ -65,20 +71,22 @@ $app: ".App";
     justify-content: space-between;
     align-items: stretch;
 
+    list-style-type: none;
     width: 100%;
     height: 50px;
     padding: 5px;
     box-sizing: border-box;
     border: 1px solid lightcyan;
     border-bottom: none;
+    box-sizing: border-box;
     &:last-child {
       border-bottom: 1px solid lightcyan;
     }
   }
-  &__tasksItemTxt {
+  &__tasksItemTxt{
     color: lightcyan;
     font-size: 18pt;
-    padding: 10px;
+    padding: 5px;
   }
   &__tasksItemBtn {
     font-size: 18pt;
