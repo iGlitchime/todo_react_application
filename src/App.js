@@ -19,10 +19,13 @@ class App extends Component {
         console.log(value);
     };
 
-    handleDelete(itemToBeDeleted) {
+    handleDelete = (itemToBeDeleted) => {
         console.log(itemToBeDeleted);
-        let newItemsArray = this.state.items.filter()
-    }
+        var array = this.state.data;
+        var index = array.indexOf(itemToBeDeleted);
+        array.splice(index,1);
+        this.setState({ data: array});
+    };
 
     render() {
         return (
