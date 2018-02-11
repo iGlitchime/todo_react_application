@@ -19,14 +19,19 @@ class App extends Component {
         console.log(value);
     };
 
-
+    handleDelete(itemToBeDeleted) {
+        console.log(itemToBeDeleted);
+    }
 
     render() {
         return (
             <div className="App">
                 <header className="App__header">ToDoList | karane ke lie soochee</header>
                 <InputContainer nameButton={'get on'} getInputData={this.getInputData}/>
-                <TasksList itemsData = {this.state.data}/>
+                <TasksList
+                    itemsData = {this.state.data}
+                    handleDelete={this.handleDelete}
+                    />
             </div>
         );
     }
