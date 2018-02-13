@@ -10,31 +10,30 @@ class App extends Component {
         super();
 
         this.state = {
-            data: null
+            tasksList: []
         }
     }
 
-    getInputData = (value) => {
-        this.setState({data: value});
-        console.log(value);
+    handleTaskAdd = (value) => {
+        let { tasksList } = this.state;
+        this.setState({tasksList: [...tasksList, value]});
     };
 
     handleDelete = (itemToBeDeleted) => {
-        console.log(itemToBeDeleted);
-        var array = this.state.data;
+        var array = this.state.tasksList;
         var index = array.indexOf(itemToBeDeleted);
-        array.splice(index,1);
-        this.setState({ data: array});
+        array.splice(index, 1);
+        this.setState({tasksList: array});
     };
 
     render() {
         return (
             <div className="App">
                 <header className="App__header">ToDoList | karane ke lie soochee</header>
-                <InputContainer nameButton={'get on'} getInputData={this.getInputData}/>
+                <InputContainer onSubmit={this.handleTaskAdd}/>
                 <TasksList
-                    itemsData={this.state.data}
-                    itemsDelete={this.handleDelete}
+                    tasksList={this.state.tasksList}
+                    onItemRemove={this.handleDelete}
                     />
             </div>
         );

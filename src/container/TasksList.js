@@ -1,28 +1,24 @@
 /**
- * Created by IATS on 07.02.2018.
+ * Created by iGlitchime on 07.02.2018.
  */
 import React from 'react';
 import TasksItem from './TasksItem';
+import PropTypes from 'prop-types';
 
 export default class TasksList extends React.Component {
-
+    static propTypes = {
+        tasksList: PropTypes.array.isRequired,
+        onItemRemove: PropTypes.func.isRequired
+    };
     render() {
-        //console.log(this.props);
-        //console.log(this.props.itemsData);
-        //console.log(this.props.itemsDelete);
-        let MainThis = this;
-        console.log(MainThis);
-        //let MainThis = this.props;
-
-
         return (
             <div className="App__tasksList">
-                { this.props.itemsData ? (this.props.itemsData.map(function (listValue, i) {
+                { this.props.tasksList ? (this.props.tasksList.map((listValue, index) => {
                     return (
                         <TasksItem
-                            key={listValue.toString()}
+                            key={index}
                             listValue={listValue}
-                            TasksListThis={MainThis}
+                            onItemRemove={this.props.onItemRemove}
                         />
                     );
                 })) : "Add any task! | Soochee mein ek kaary joden"}
