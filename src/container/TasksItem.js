@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 export default class TasksItem extends React.Component {
     static propTypes = {
-        //TasksListThis: PropTypes.array.isRequired,
+        TasksListThis: PropTypes.array.isRequired,
 
     };
 

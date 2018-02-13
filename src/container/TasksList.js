@@ -10,14 +10,6 @@ export default class TasksList extends React.Component {
         itemsData: PropTypes.array.isRequired
     };
     render() {
-        //console.log(this.props);
-        //console.log(this.props.itemsData);
-        //console.log(this.props.itemsDelete);
-        let MainThis = this;
-        //console.log(MainThis);
-        //let MainThis = this.props;
-
-
         return (
             <div className="App__tasksList">
                 { this.props.itemsData ? (this.props.itemsData.map((listValue, index) => {
