@@ -1,5 +1,5 @@
 /**
- * Created by IATS on 07.02.2018.
+ * Created by iGlitchime on 07.02.2018.
  */
 import React from 'react';
 import TasksItem from './TasksItem';
@@ -7,17 +7,18 @@ import PropTypes from 'prop-types';
 
 export default class TasksList extends React.Component {
     static propTypes = {
-        itemsData: PropTypes.array.isRequired
+        tasksList: PropTypes.array.isRequired,
+        onItemRemove: PropTypes.func.isRequired
     };
     render() {
         return (
             <div className="App__tasksList">
-                { this.props.itemsData ? (this.props.itemsData.map((listValue, index) => {
+                { this.props.tasksList ? (this.props.tasksList.map((listValue, index) => {
                     return (
                         <TasksItem
                             key={index}
                             listValue={listValue}
-                            itemsDelete={this.props.itemsDelete}
+                            onItemRemove={this.props.onItemRemove}
                         />
                     );
                 })) : "Add any task! | Soochee mein ek kaary joden"}
