@@ -1,16 +1,9 @@
-/**
- * Created by IATS on 09.02.2018.
- */
-
+/** Created by IATS on 09.02.2018.*/
 import React from 'react';
 import { connect } from 'react-redux';
-import { store } from '../store';
-import PropTypes from 'prop-types';
-
 import { addItemTodoAction } from '../actions/index';
 
 class InputContainer extends React.Component {
-
     constructor() {
         super();
 
@@ -29,7 +22,7 @@ class InputContainer extends React.Component {
     sendValueOnSubmit = (event) => {
         event.preventDefault();
         if (this.state.inputValue && this.state.inputValue.length > 0) {
-            this.props.addItemTodoAction({id: Date.now(), item: this.state.inputValue});
+            this.props.addItemTodoAction({ id: Date.now(), item: this.state.inputValue});
         }
         this.setState({inputValue: ''});
     };
@@ -47,11 +40,9 @@ class InputContainer extends React.Component {
     }
 }
 
-
 function mapDispatchToProps(dispatch) {
     return {
-        addItemTodoAction: (item)=>dispatch(addItemTodoAction(item))
+        addItemTodoAction: (item) => dispatch( addItemTodoAction(item) )
     }
 }
-
 export default connect(null, mapDispatchToProps)(InputContainer);

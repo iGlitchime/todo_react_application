@@ -1,23 +1,19 @@
-/**
- * Created by iGlitchime on 07.02.2018.
- */
+/** Created by iGlitchime on 07.02.2018.*/
 import React from 'react';
 import TaskItem from './TaskItem';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 
 export class TaskList extends React.Component {
-
     render() {
         let listValue = this.props.todos;
         return (
             <div className="App__taskList">
-                { listValue ? (this.props.todos.map((listValue, i) => {
+                { listValue ? ( listValue.map((listValueItem, i) => {
                     return (
                         <TaskItem
-                            key={listValue.id}
-                            listValue={listValue.item}
+                            key={listValueItem.id}
+                            listValueItem={listValueItem}
                             />
                     );
                 })) : "Add any task!"}
@@ -25,6 +21,7 @@ export class TaskList extends React.Component {
         );
     }
 }
+
 function mapStateToProps(state) {
     return {
         todos: state.todos
@@ -33,5 +30,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {}
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(TaskList);
