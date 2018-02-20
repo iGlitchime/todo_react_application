@@ -50,7 +50,7 @@ class InputContainer extends React.Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addItemTodoAction: (item)=>dispatch( addItemTodoAction(item) )
+        addItemTodoAction: (item)=>dispatch(addItemTodoAction(item))
     }
 }
 

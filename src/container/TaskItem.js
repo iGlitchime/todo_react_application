@@ -1,5 +1,4 @@
 /* Created by iGlitchime on 10.02.2018. */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 

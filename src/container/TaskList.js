@@ -5,6 +5,8 @@ import React from 'react';
 import TaskItem from './TaskItem';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
+
 export class TaskList extends React.Component {
 
     render() {
@@ -31,4 +33,5 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(TaskList);
