@@ -1,44 +1,52 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import store from './store';
+import * as pageActions from './actions/index';
 import InputContainer from './container/InputContainer';
-import TasksList from './container/TasksList';
+import TaskList from './container/TaskList';
+import { connect } from 'react-redux';
 
+import { bindActionCreators } from 'redux';
 
-class App extends Component {
-    constructor() {
+const initialState = {todos: []};
+
+export class App extends Component {
+    constructor(props) {
         super();
 
-        this.state = {
-            data: null
-        }
+        this.todos = props.todos;
+        this.removeTodoItem = this.removeTodoItem.bind(this);
     }
 
-    getInputData = (value) => {
-        this.setState({data: value});
-        console.log(value);
-    };
-
-    handleDelete = (itemToBeDeleted) => {
-        console.log(itemToBeDeleted);
-        var array = this.state.data;
-        var index = array.indexOf(itemToBeDeleted);
-        array.splice(index,1);
-        this.setState({ data: array});
+    removeTodoItem(item) {
+        this.props.removeTodoItem(item);
     };
 
     render() {
+        const todos = this.props.todos;
+        //console.log(todos);
         return (
             <div className="App">
-                <header className="App__header">ToDoList | karane ke lie soochee</header>
-                <InputContainer nameButton={'get on'} getInputData={this.getInputData}/>
-                <TasksList
-                    itemsData={this.state.data}
-                    itemsDelete={this.handleDelete}
-                    />
+                <header className="App__header">ToDoList</header>
+                <InputContainer />
+                { (todos && todos.length > 0 ) ? (
+                    <TaskList/>
+                ) : ( 'Add Smth')
+                }
+
             </div>
         );
     }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+        todos: state.todos
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return {
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
