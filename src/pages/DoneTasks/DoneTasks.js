@@ -3,10 +3,9 @@
  */
 import React from 'react';
 
-const Contacts = () => (
+const DoneTasks = () => (
     <div>
-        <h1>Contacts</h1>
+        <h1>DoneTasks</h1>
     </div>
 )
-
-export default Contacts;
+export default DoneTasks;

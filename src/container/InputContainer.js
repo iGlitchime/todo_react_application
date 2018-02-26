@@ -22,13 +22,12 @@ class InputContainer extends React.Component {
         if(this.refs.inputTaskItemField.value !== ' '){
             this.setState({inputValue: this.refs.inputTaskItemField.value});
         }
-
     };
 
     sendValueOnSubmit = (event) => {
         event.preventDefault();
         if (this.state.inputValue && this.state.inputValue.length > 4) {
-            this.props.addItemTodoAction({ id: Date.now(), item: this.state.inputValue});
+            this.props.addItemTodoAction({ id: Date.now(), item: this.state.inputValue, completed: false});
         }
         this.setState({inputValue: ''});
     };

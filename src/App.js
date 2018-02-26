@@ -12,7 +12,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App__header"><h1> ToDoList</h1></header>
+                <header className="App__header"><h1>ToDoList</h1></header>
                 <Router history={history}>
                     <LinkList/>
                 </Router>

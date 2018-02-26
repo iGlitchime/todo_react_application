@@ -11,6 +11,7 @@ export class TaskList extends React.Component {
         this.handleDeleteItem = this.handleDeleteItem.bind(this);
     }
     handleDeleteItem(item) {
+
         this.props.removeItemTodoAction(item);
     };
     render() {

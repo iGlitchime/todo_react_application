@@ -3,9 +3,10 @@
  */
 import React from 'react';
 
-const About = () => (
+const CurrentTasks = () => (
     <div>
-        <h1>About</h1>
+        <h1>CurrentTasks</h1>
     </div>
 )
-export default About;
+
+export default CurrentTasks;
