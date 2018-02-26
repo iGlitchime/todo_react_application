@@ -1,5 +1,4 @@
 /** Created by IATS on 09.02.2018.*/
-
 import React from 'react';
 import { connect } from 'react-redux';
 import { addItemTodoAction } from '../actions/index';

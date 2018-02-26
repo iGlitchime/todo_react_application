@@ -3,11 +3,9 @@
  */
 import React from 'react';
 import { Route,  Link } from 'react-router-dom';
-
 import Home from '../Home/Home';
 import About from '../About/About';
 import Contacts from '../Contacts/Contacts';
-
 import 'foundation-sites';
 import 'foundation-sites/dist/css/foundation.css';
 

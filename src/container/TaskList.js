@@ -1,10 +1,8 @@
 /** Created by iGlitchime on 07.02.2018.*/
-
 import React from 'react';
 import TaskItem from './TaskItem';
 import { connect } from 'react-redux';
 import { removeItemTodoAction } from '../actions/index';
-
 
 export class TaskList extends React.Component {
     constructor(state) {
@@ -12,13 +10,9 @@ export class TaskList extends React.Component {
 
         this.handleDeleteItem = this.handleDeleteItem.bind(this);
     }
-
     handleDeleteItem(item) {
         this.props.removeItemTodoAction(item);
-    }
-
-;
-
+    };
     render() {
         let listValue = this.props.todos;
         return (
@@ -36,7 +30,6 @@ export class TaskList extends React.Component {
         );
     }
 }
-
 function mapStateToProps(state) {
     return {
         todos: state.todos
