@@ -1,3 +1,19 @@
+@import '../node_modules/foundation-sites/scss/_global';
+@import '../node_modules/foundation-sites/scss/foundation';
+
+
+//$button-palette: map-merge($foundation-palette, (
+//        greeny: #88A81F,
+//        darkwave: #224D73
+//)) !default;
+//
+//$button-palette: map-merge($foundation-palette, (
+//        purple: #bb00ff
+//)) !default;
+//
+//$darkwave: #224D73 !default;
+//$greeny: #88A81F !default;
+
 *, body {
   margin: 0;
   padding: 0;

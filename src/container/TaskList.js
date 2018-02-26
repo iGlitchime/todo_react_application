@@ -1,4 +1,5 @@
 /** Created by iGlitchime on 07.02.2018.*/
+
 import React from 'react';
 import TaskItem from './TaskItem';
 import { connect } from 'react-redux';
@@ -12,16 +13,17 @@ export class TaskList extends React.Component {
         this.handleDeleteItem = this.handleDeleteItem.bind(this);
     }
 
-    handleDeleteItem(item){
+    handleDeleteItem(item) {
         this.props.removeItemTodoAction(item);
-    };
+    }
+
+;
 
     render() {
         let listValue = this.props.todos;
         return (
             <div className="App__taskList">
                 { listValue ? ( listValue.map((listValueItem, i) => {
-
                     return (
                         <TaskItem
                             key={listValueItem.id}

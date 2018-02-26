@@ -1,6 +1,7 @@
 /* Created by iGlitchime on 10.02.2018. */
 import React from 'react';
 import PropTypes from 'prop-types';
+//import Toggle from 'react-toggle';
 
 
 export default class TaskItem extends React.Component {
@@ -9,29 +10,35 @@ export default class TaskItem extends React.Component {
         onDeleteItem: PropTypes.func.isRequired
     };
 
-    constructor(){
+    constructor() {
         super();
 
         this.handleDeleteItem = this.handleDeleteItem.bind(this);
     }
 
-    handleDeleteItem(event){
+    handleDeleteItem(event) {
         event.preventDefault();
-        this.props.onDeleteItem(this.props.listValueItem);
-    };
+        alert('Yo');
+        //this.props.onDeleteItem(this.props.listValueItem);
+    }
+
+;
 
 
     render() {
         return (
-            <div className="App__tasksItem" id={this.props.listValueItem.id}>
-                <div className="App__tasksItemTxt">
+        <div className="App__tasksItem row grid-x grid-padding-x" id={this.props.listValueItem.id}>
+            <div className="App__checkbox columns medium-8 text-left row">
+
+                <input id="checkbox12" className="App__checkbox column" type="checkbox" toggle={this.handleDeleteItem}/>
+                <label htmlFor="checkbox12" className="App__tasksItemTxt columns middle-11">
                     {this.props.listValueItem.item}
-                </div>
-                <button className="App__tasksItemBtn"
-                        onClick={this.handleDeleteItem}>
-                    Remove Task
-                </button>
+                </label>
             </div>
+            <div className="App__tasksItemDate columns medium-4 text-right">
+                {Date.now()}
+            </div>
+        </div>
         );
     }
 }

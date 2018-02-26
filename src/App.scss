@@ -1,99 +1,52 @@
-$app: ".App";
-//#{$app}
+@import '../node_modules/foundation-sites/scss/_global';
+@import '../node_modules/foundation-sites/scss/foundation';
+@import './assets/font/_foundation-icons.css';
+
+
 .App {
   text-align: center;
-  background: darkcyan;
-  padding: 100px 10px;
+  background: linear-gradient(#F1C905 50%, #E7E7E5 50%);
+  height: 100vh;
+  padding: 50px;
+  color: #494D4C;
+  &__row {
+    background: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    height: 75%;
 
-  &__header{
-    font-size: 24pt;
-    margin: 50px auto;
-    font-family: Courier,sans-serif;
-    font-weight: 800;
-  }
-  &__child {
-    //display: flex;
-    //justify-content: space-between;
-    //align-items: center;
-
-    font-size: 24pt;
-    margin: 50px auto;
-    width: 500px;
-  }
-  &__input {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 50px;
-    border: none;
-
-    &:-moz-placeholder, &:-ms-input-placeholder, &::-moz-placeholder, &::-webkit-input-placeholder {
-      color: #006666;
-      font-size: 18pt;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  &__column {
+    padding: 20px;
+    &:first-child {
+      padding: 0;
+      background: #224D73;
     }
   }
-  &__input-field {
-    padding: 10px;
-    background: lightcyan;
-    outline: none;
-    font-size: 18pt;
-    border: 1px solid lightseagreen;
-    &:focus {
-      outline: none;
+  &__menu_icon {
+    opacity: .7;
+    & .fi-align-justify:before, & .fi-home:before, & .fi-trophy:before, & .fi-trash:before {
+      color: white;
     }
   }
-
-  &__button {
-
-    &:active {
-      //border-width: 2px;
-      border-style: groove;
-    }
-
-  }
-
   &__input-button {
-    border: 1px solid #ECCCA2;
-    background: sandybrown;
-    font-size: 18pt;
-    height: 50px;
-    padding: 10px;
     box-sizing: border-box;
-    outline: none;
-  }
-  &__tasksList {
-    width: 500px;
-    margin: 50px auto;
+    height: 40px;
   }
   &__tasksItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-
-    list-style-type: none;
-    width: 100%;
-    height: 50px;
-    padding: 5px;
-    box-sizing: border-box;
-    border: 1px solid lightcyan;
+    border: 1px solid #639;
     border-bottom: none;
-    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
     &:last-child {
-      border-bottom: 1px solid lightcyan;
+      border-bottom: 1px solid #639;
     }
   }
-  &__tasksItemTxt{
-    color: lightcyan;
-    font-size: 18pt;
-    padding: 5px;
-  }
-  &__tasksItemBtn {
-    font-size: 18pt;
-    border: 1px solid #004444;
-    color: #004444;
-    background: #006666;
-    padding: 5px 10px;
-    outline: none;
+  &__menu {
+    padding-top: 15px;
+    justify-content: flex-start;
+    align-items: center;
   }
 }
