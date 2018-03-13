@@ -54,7 +54,10 @@ export default class TaskItem extends React.Component {
                         <label htmlFor={this.props.listValueItem.id}
                                id={this.props.listValueItem.id}
                                ref=""
-                               className={this.state.listValueItem.completed ? 'App__tasksItemTxt columns done' : 'App__tasksItemTxt columns'}>
+                               className={
+                               this.state.listValueItem.completed
+                               ? 'App__tasksItemTxt columns done'
+                               : 'App__tasksItemTxt columns'}>
                             {this.props.listValueItem.item}
                         </label>
                 </div>
