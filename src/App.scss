@@ -2,6 +2,9 @@
 @import '../node_modules/foundation-sites/scss/foundation';
 @import './assets/font/_foundation-icons.css';
 
+@import '../node_modules/foundation-sites/scss/grid/_flex-grid';
+@import '../node_modules/foundation-sites/scss/grid/_classes';
+
 .App {
   text-align: center;
   background: linear-gradient(#F1C905 50%, #E7E7E5 50%);
@@ -42,7 +45,6 @@
   &__tasksItem {
     border: 1px solid #494D4C;
     border-bottom: none;
-    width: 100%;
     padding: 10px;
     &:last-child {
       border-bottom: 1px solid #494D4C;
@@ -55,8 +57,19 @@
   }
   &__tasksItemTxt{
     text-decoration: none;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &.done{
       text-decoration: line-through;
     }
   }
+
+}
+
+.done {
+  text-decoration: line-through;
+}
+.opacity-5{
+  opacity: 0.5;
 }

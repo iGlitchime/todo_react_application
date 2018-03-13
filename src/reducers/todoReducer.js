@@ -1,5 +1,5 @@
 const initialState = [];
-
+//const ToDoId = 0;
 export function todoReducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_ITEM_TODO':

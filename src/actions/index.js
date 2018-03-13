@@ -5,6 +5,7 @@ export const addItemTodoAction = (item) => {
 }
 
 export const removeItemTodoAction = (item) => {
+    console.log(item);
     return ({
         type: 'DELETE_TODO',
         id: item.id

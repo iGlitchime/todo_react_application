@@ -1,6 +1,10 @@
 @import '../node_modules/foundation-sites/scss/_global';
 @import '../node_modules/foundation-sites/scss/foundation';
 
+//// @include foundation-grid;
+//@include foundation-flex-classes;
+//@include foundation-flex-grid;
+
 
 //$button-palette: map-merge($foundation-palette, (
 //        greeny: #88A81F,
@@ -18,4 +22,8 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+[type='checkbox'] + label, [type='radio'] + label {
+  vertical-align: middle;
 }

@@ -3,49 +3,64 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 
-
 export default class TaskItem extends React.Component {
     static propTypes = {
         listValueItem: PropTypes.object.isRequired,
         onDeleteItem: PropTypes.func.isRequired
     };
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            listValueItem: this.props.listValueItem,
+            checked: false
+        };
         this.handleDeleteItem = this.handleDeleteItem.bind(this);
     }
 
+
     handleDeleteItem(event) {
-        //event.preventDefault();
 
-        console.log('Checkbox checked:', (event.target.checked));
-        if (event.target.checked && event.target.checked !== false) {
-            document.getElementById('labelid_' + this.props.listValueItem.id).style.textDecoration = 'line-through';
+        if (event.target.checked !== false) {
+            let itemInfo = {
+                id: this.props.listValueItem.id,
+                timeStamp: Date.now(),
+                item: this.props.listValueItem.item,
+                completed: (event.target.checked)
+            };
+            this.setState({listValueItem: itemInfo})
         } else {
-            document.getElementById('labelid_' + this.props.listValueItem.id).style.textDecoration = 'none';
+            let itemInfo = {
+                id: this.props.listValueItem.id,
+                timeStamp: Date.now(),
+                item: this.props.listValueItem.item,
+                completed: (event.target.checked)
+            };
+            this.setState({listValueItem: itemInfo});
         }
-
-        //записываю новый Date.now() в качестве id
-        this.props.onDeleteItem(this.props.listValueItem);
     }
-
-;
 
 
     render() {
         return (
-            <div className="App__tasksItem row grid-x grid-padding-x" id={this.props.listValueItem.id}>
-                <div className="App__checkbox columns medium-8 text-left row">
-                    <input id={'inputid_'+ this.props.listValueItem.id} className="App__checkbox column" type="checkbox"
-                           onClick={this.handleDeleteItem}/>
-                    <label htmlFor={'inputid_'+ this.props.listValueItem.id}
-                           id={'labelid_'+ this.props.listValueItem.id} className="App__tasksItemTxt columns middle-11">
-                        {this.props.listValueItem.item}
-                    </label>
+            <div className="App__tasksItem row grid-x align-justify align-middle" id={this.props.listValueItem.id}>
+                <div className="App__checkbox cell small-8 medium-8 large-8 text-left align-middle">
+                        <input id={this.props.listValueItem.id}
+                               className="App__checkbox column"
+                               type="checkbox"
+                               onChange={this.handleDeleteItem}
+                            />
+                        <label htmlFor={this.props.listValueItem.id}
+                               id={this.props.listValueItem.id}
+                               ref=""
+                               className={this.state.listValueItem.completed ? 'App__tasksItemTxt columns done' : 'App__tasksItemTxt columns'}>
+                            {this.props.listValueItem.item}
+                        </label>
                 </div>
-                <div className="App__tasksItemDate columns medium-4 text-right">
+                <div className="App__tasksItemDate cell small-4 medium-4 large-4 text-right">
                     <Moment format="YYYY-MM-DD HH:mm">
-                        {this.props.listValueItem.id}
+                        {this.state.listValueItem.timeStamp}
                     </Moment>
                 </div>
             </div>
